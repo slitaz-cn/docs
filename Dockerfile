@@ -1,7 +1,9 @@
-FROM node:14
+FROM node:16
 
-WORKDIR /app/website
+WORKDIR /app
 
-COPY package.json /app/website/package.json
-RUN yarn install
-CMD ["yarn", "start"]
+COPY package.json yarn.lock ./
+RUN --mount=type=cache,target=/root/.yarn YARN_CACHE_FOLDER=/root/.yarn yarn install
+
+COPY . .
+RUN --mount=type=cache,target=./node_modules/.cache/webpack yarn build
