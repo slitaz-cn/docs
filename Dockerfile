@@ -1,7 +1,7 @@
-FROM node:lts
+FROM node:14
 
-WORKDIR /app
-EXPOSE 3000 3000
+WORKDIR /app/website
+
+COPY package.json /app/website/package.json
 RUN yarn install
-
 CMD ["yarn", "start"]

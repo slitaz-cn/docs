@@ -1,14 +1,12 @@
-version: '3.2'
-services:
+version: "3.7"
 
-  docs:
-    image: node:18-alpine
-    container_name: docusaurus
-    environment:
-      TZ: Asia/Shanghai
-    ports:
-      - 3030:3000
-    working_dir: /app
+services:
+  docusaurus:
     volumes:
-      - ./:/app
-    command: /bin/sh -c 'yarn run build & yarn run serve'
+      - ./../docusaurus:/app/website
+
+    ports:
+      - 3000:3000/tcp
+      - 35729:35729/tcp
+    image: docusaurus
+    command: bash -c 'yarn install && yarn start'
