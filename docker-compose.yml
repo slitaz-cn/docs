@@ -6,4 +6,3 @@ services:
     volumes:
       - /docusaurus/my-website
 
-    working_dir: /docusaurus/my-website
