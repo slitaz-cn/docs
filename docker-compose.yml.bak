@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  docusaurus:
+    build: .
+    environment:
+      - PUID=0
+      - PGID=0
+    volumes:
+      - ./docs:/app/docs
+      - ./blog:/app/blog
+      - ./static:/app/static
+      - ./src:/app/src
+      - ./sidebars.json:/app/sidebars.json
+      - ./docusaurus.config.js:/app/docusaurus.config.js
+      - ./package.json:/app/package.json
+      - ./package-lock.json:/app/package-lock.json
+    working_dir: /app
+
+    ports:
+      - 3000:3000
+    restart: unless-stopped
