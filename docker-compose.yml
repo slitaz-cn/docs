@@ -5,6 +5,6 @@ services:
     build: .
     network_mode: "host"
     volumes:
-      - ../docusaurus/my-website:/app/website
+      - ../docusaurus:/app/website
 
     working_dir: /app/website
