@@ -4,7 +4,6 @@ services:
   docusaurus:
     build: .
     network_mode: "host"
-    user: ${MY_UID}:${MY_GID}
     volumes:
       - ../my-website:/app/website
 
