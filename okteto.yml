@@ -12,7 +12,7 @@ build:
 deploy:
   commands:
     - name: Deploy
-      command: npm run serve
+      command: - bash
 
 # The dependencies section defines other git repositories to be deployed as part of your development environment
 # More info: https://www.okteto.com/docs/reference/manifest/#dependencies
@@ -22,7 +22,7 @@ deploy:
 # More info: https://www.okteto.com/docs/reference/manifest/#dev
 dev:
   docs:
-    image: slitaz-cn-docs
+    image: ${OKTETO_BUILD_DOCS_IMAGE}
     sync:
       - .:/app
     workdir: /app
