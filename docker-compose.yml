@@ -3,6 +3,12 @@ version: "3"
 services:
   docusaurus:
     build: .
+    environment:
+      - PUID=0
+      - PGID=0
     volumes:
-      - /docusaurus/my-website
+      - /docusaurus/my-website:/docusaurus/my-website
 
+    ports:
+      - 8443:8443
+    restart: unless-stopped
