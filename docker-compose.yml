@@ -4,5 +4,7 @@ services:
   docusaurus:
     build: .
     network_mode: "host"
+    volumes:
+      - /docusaurus/my-website:/app/website
 
-    working_dir: /docusaurus/my-website/
+    working_dir: /app/website
