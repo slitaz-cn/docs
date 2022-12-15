@@ -7,8 +7,14 @@ services:
       - PUID=0
       - PGID=0
     volumes:
-      - /docusaurus/my-website:/docusaurus/my-website
+      - ./docs:/app/docs
+      - ./blog:/app/blog
+      - ./static:/app/static
+      - ./src:/app/src
+      - ./sidebars.json:/app/sidebars.json
+      - ./docusaurus.config.js:/app/docusaurus.config.js
+    working_dir: /app
 
     ports:
-      - 8443:8443
+      - 3000:3000
     restart: unless-stopped
