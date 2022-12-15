@@ -13,6 +13,7 @@ services:
       - ./src:/app/src
       - ./sidebars.json:/app/sidebars.json
       - ./docusaurus.config.js:/app/docusaurus.config.js
+      - ./package.json:/app/package.json
     working_dir: /app
 
     ports:
