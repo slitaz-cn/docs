@@ -3,8 +3,7 @@ version: "3"
 services:
   docusaurus:
     build: .
-    network_mode: "host"
     volumes:
-      - /docusaurus/my-website:/app/website
+      - /docusaurus/my-website
 
-    working_dir: /app/website
+    working_dir: /docusaurus/my-website
